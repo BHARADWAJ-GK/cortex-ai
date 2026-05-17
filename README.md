@@ -6,7 +6,6 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
 ![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=flat-square&logo=prisma)
 ![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=flat-square&logo=tailwind-css)
-![Claude AI](https://img.shields.io/badge/Powered%20by-Claude%20AI-orange?style=flat-square)
 
 ---
 
@@ -104,7 +103,7 @@ cortex-ai/
 ### Prerequisites
 - Node.js 18+
 - PostgreSQL database (local or cloud)
-- Anthropic API key
+- GEMINI API key
 
 ### 1. Clone & Install
 ```bash
@@ -149,7 +148,7 @@ NEXTAUTH_SECRET="generate-with: openssl rand -base64 32"
 NEXTAUTH_URL="http://localhost:3000"
 
 # AI
-ANTHROPIC_API_KEY="sk-ant-..."
+GEMINI_API_KEY="Alza-..."
 
 # App
 NEXT_PUBLIC_APP_URL="http://localhost:3000"
@@ -166,8 +165,8 @@ NEXT_PUBLIC_APP_URL="http://localhost:3000"
 openssl rand -base64 32
 ```
 
-**ANTHROPIC_API_KEY:**
-- Create account at [console.anthropic.com](https://console.anthropic.com)
+**GEMINI_API_KEY:**
+- Create account at GEMINI API
 - Go to API Keys → Create Key
 
 ---
@@ -209,7 +208,7 @@ Browser → Next.js (App Router)
            └── API Routes (/api/*)
                 ├── NextAuth.js (session management)
                 ├── Prisma ORM → PostgreSQL
-                └── Anthropic SDK → Claude AI
+                └── Google SDK → GEMINI AI
 ```
 
 ---
@@ -223,7 +222,7 @@ Browser → Next.js (App Router)
 | Backend    | Next.js API Routes        |
 | Database   | PostgreSQL + Prisma ORM   |
 | Auth       | NextAuth.js v4 + JWT      |
-| AI         | Anthropic Claude API      |
+| AI         | Google GEMINI API         |
 | Deployment | Vercel + Neon DB          |
 | Language   | TypeScript                |
 
@@ -238,7 +237,7 @@ Browser → Next.js (App Router)
    → NextAuth.js manages sessions via JWT. Passwords hashed with bcrypt (salt=12). Middleware protects routes.
 
 3. **"How do you connect to the AI?"**
-   → Anthropic SDK calls Claude claude-sonnet. System prompt defines AI persona. JSON-structured responses parsed for reviews.
+   → Google SDK calls Google GEMINI 1.5 Flash. System prompt defines AI persona. JSON-structured responses parsed for reviews.
 
 4. **"How is the database structured?"**
    → Prisma ORM with PostgreSQL. User → Reviews (one-to-many), User → Chats → Messages (nested). Cascade deletes.
