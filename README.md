@@ -79,7 +79,7 @@ cortex-ai/
 ├── lib/
 │   ├── prisma.ts                 # Singleton Prisma client
 │   ├── auth.ts                   # NextAuth configuration
-│   ├── ai.ts                     # Anthropic AI integration
+│   ├── ai.ts                     # Google AI integration
 │   ├── utils.ts                  # Helper functions
 │   └── validations.ts            # Zod schemas
 │
